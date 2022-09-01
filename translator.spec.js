@@ -35,6 +35,7 @@ describe('Testing translateToMorse', () => {
   expect(symbol).toBe(".-.-.")
 }) 
 
+
 })
 
 
