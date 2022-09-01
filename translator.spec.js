@@ -35,6 +35,14 @@ describe('Testing translateToMorse', () => {
   expect(symbol).toBe(".-.-.")
 }) 
 
+it("receives decimal numbers and turn them into morsecode", ()=> {
+  let decimal;
+  decimal = "1.5";
+expect(decimal).toBe(".---- .-.-.- .....")
+}) 
+  
+  
+
 
 })
 

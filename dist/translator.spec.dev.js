@@ -32,6 +32,11 @@ describe('Testing translateToMorse', function () {
     symbol = "+";
     expect(symbol).toBe(".-.-.");
   });
+  it("receives decimal numbers and turn them into morsecode", function () {
+    var decimal;
+    decimal = "1.5";
+    expect(decimal).toBe(".---- .-.-.- .....");
+  });
 }); // What should translateToMorse function actually be able to do?
 // - Receive letters and translate those letters into morse code
 // - Take into consideration capital letters - These also need to translate to morse code - Research
