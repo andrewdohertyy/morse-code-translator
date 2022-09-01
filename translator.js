@@ -1,6 +1,6 @@
-export const translateToMorse = () => {
+//export const translateToMorse = () => {makeMorse}
 
-    const toMorseCode = [{ 
+    const myArray = { 
         'a':'.-',
         'b':'-...',
         'c':'-.-.',
@@ -38,18 +38,15 @@ export const translateToMorse = () => {
         '0':'-----',
         ' ':'/',
         '?':'..--..'
-      }];
+      };
 
-      const toMorse = (string) => {
-      return string.split("").map(c => (c == " " ? " " : CHAR_TO_MORSE[c]) + " ").join("").trim();
-      }
+      const makeMorse = (string) => {
+            return string.toLowerCase().split("").map(value => {
+                return myArray[value] ? myArray[value] : value;
+            }).join("");
+    }
 
-      console.log(toMorse("Andrew"))
+      console.log(makeMorse("Andrew?"));
+      console.log("test")
+      console.log(makeMorse("Doherty"));;
 
-
-
-
-
-
-
-}
