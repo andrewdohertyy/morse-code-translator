@@ -41,12 +41,13 @@
       };
 
       const makeMorse = (string) => {
-            return string.toLowerCase().split("").map(value => {
-                return myArray[value] ? myArray[value] : value;
-            }).join("");
+            return string.toLowerCase().split("").map(element => {
+            return myArray[element]; 
+        }).join("");
     }
 
       console.log(makeMorse("Andrew?"));
       console.log("test")
       console.log(makeMorse("Doherty"));;
+      console.log(makeMorse("united"));
 

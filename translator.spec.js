@@ -19,8 +19,8 @@ describe('Testing translateToMorse', () => {
 
   it("receive strings and turn them into morsecode", ()=> {
       let string;
-      string = "";
-    expect(string).toBe(".- -. -.. .-. . .--")
+      string = "Andrew";
+    expect(char).toBe(".- -. -.. .-. . .--")
   }) 
 
   it("receives spaces in between words and turn them into morsecode", ()=> {
@@ -39,6 +39,18 @@ it("receives decimal numbers and turn them into morsecode", ()=> {
   let decimal;
   decimal = "1.5";
 expect(decimal).toBe(".---- .-.-.- .....")
+}) 
+
+it("receivesa string with letters and numbers and turns them into morsecode", ()=> {
+  let mixedString;
+  mixedString = "Andrew1";
+expect(mixedString).toBe(".- -. -.. .-. . .-- .----")
+}) 
+
+it("receives string with letters numbers and symbols and a space and turns them into morsecode", ()=> {
+  let mixedString;
+  mixedString = "Andrew1?? ?";
+expect(mixedString).toBe(".- -. -.. .-. . .-- .---- ..--.. ..--.. / ..--..")
 }) 
   
   

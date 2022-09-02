@@ -19,8 +19,8 @@ describe('Testing translateToMorse', function () {
   });
   it("receive strings and turn them into morsecode", function () {
     var string;
-    string = "";
-    expect(string).toBe(".- -. -.. .-. . .--");
+    string = "Andrew";
+    expect(char).toBe(".- -. -.. .-. . .--");
   });
   it("receives spaces in between words and turn them into morsecode", function () {
     var space;
@@ -36,6 +36,16 @@ describe('Testing translateToMorse', function () {
     var decimal;
     decimal = "1.5";
     expect(decimal).toBe(".---- .-.-.- .....");
+  });
+  it("receivesa string with letters and numbers and turns them into morsecode", function () {
+    var mixedString;
+    mixedString = "Andrew1";
+    expect(mixedString).toBe(".- -. -.. .-. . .-- .----");
+  });
+  it("receives string with letters numbers and symbols and a space and turns them into morsecode", function () {
+    var mixedString;
+    mixedString = "Andrew1?? ?";
+    expect(mixedString).toBe(".- -. -.. .-. . .-- .---- ..--.. ..--.. / ..--..");
   });
 }); // What should translateToMorse function actually be able to do?
 // - Receive letters and translate those letters into morse code
