@@ -6,12 +6,29 @@
 
 .translator {
   display: grid;
+  padding: 20px;
+  height: 50;
+}
+.translator__heading {
+  padding: 30px;
+  text-align: center;
+}
+.translator__buttons {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+.translator__convert {
+  width: 40%;
+  margin-left: 40px;
 }
 .translator__enter {
   height: 50px;
   text-align: center;
+  margin: 20px;
 }
 .translator__display {
   height: 50px;
   text-align: center;
-}
+  margin: 20px;
+}/*# sourceMappingURL=main.css.map */

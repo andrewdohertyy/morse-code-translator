@@ -1,6 +1,9 @@
 "use strict";
 
-//export const translateToMorse = () => {makeMorse}
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.makeMorse = void 0;
 var myList = {
   'a': '.-',
   'b': '-...',
@@ -40,31 +43,25 @@ var myList = {
   ' ': '/',
   '?': '..--..',
   '/': '-..-.',
-  '&': '.-...'
+  '&': '.-...',
+  '+': '.-.-.',
+  '.': '.-.-.-'
 };
-var englishText = document.querySelector(".translator__enter");
-var morseDisplay = document.querySelector(".translator__display");
-var convertButton = document.querySelector(".translator__convert"); // const makeMorse = (string) => {
-//     return string.toLowerCase().split("").map(element => {
-//     return myList[element]; 
-//     }).join("");
-// }
 
-var items = [""];
-
-var makeMorse = function makeMorse() {
-  var inputValue = englishText.value;
-  console.log(inputValue);
-  inputValue = inputValue.toLowerCase();
-  items.push(inputValue);
-  items = inputValue.split("");
-  var itemsSplit = items.map(function (i) {
+var makeMorse = function makeMorse(value) {
+  var input = String(value.toLowerCase());
+  var splitArr = input.split("");
+  console.log(splitArr);
+  var mapArr = splitArr.map(function (i) {
     if (myList[i]) {
       return myList[i];
+    } else {
+      return i;
     }
   });
-  var morsecode = itemsSplit.join(" ");
-  morseDisplay.value = morsecode;
+  var morsecode = mapArr.join(" ");
+  return morsecode;
 };
 
-englishText.addEventListener("keyup", makeMorse); // convertButton.addEventListener("click",)
+exports.makeMorse = makeMorse;
+console.log(makeMorse("1.5"));

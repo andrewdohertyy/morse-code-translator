@@ -1,61 +1,59 @@
-import { translateToMorse } from "./translator";
+import { makeMorse } from './translator';
+
 
 describe('Testing translateToMorse', () => {
   it("receive letters and turn them into morsecode", ()=> {
     // Arrange
       let letter;
     // Act
-      letter = A;
+      letter = "A";
+      let result = makeMorse(letter)
     // Assert
-    expect(letter).toBe(".-")
+    expect(result).toBe(".-")
   })
 
   it("receive numbers and turn them into morsecode", ()=> {
     // Arrange
       let number;
-      number = 1;
-    expect(number).toBe(".----")
+      number = "1";
+    expect(makeMorse(number)).toBe(".----")
   })  
 
   it("receive strings and turn them into morsecode", ()=> {
-      let string;
-      string = "Andrew";
-    expect(char).toBe(".- -. -.. .-. . .--")
+      let name;
+      name = "Andrew";
+    expect(makeMorse(name)).toBe(".- -. -.. .-. . .--")
   }) 
 
   it("receives spaces in between words and turn them into morsecode", ()=> {
       let space;
       space = " ";
-    expect(letter).toBe("/")
+    expect(makeMorse(space)).toBe("/")
   }) 
  
   it("receives symbols and turn them into morsecode", ()=> {
     let symbol;
     symbol = "+";
-  expect(symbol).toBe(".-.-.")
+  expect(makeMorse(symbol)).toBe(".-.-.")
 }) 
 
 it("receives decimal numbers and turn them into morsecode", ()=> {
   let decimal;
   decimal = "1.5";
-expect(decimal).toBe(".---- .-.-.- .....")
+expect(makeMorse(decimal)).toBe(".---- .-.-.- .....")
 }) 
 
 it("receivesa string with letters and numbers and turns them into morsecode", ()=> {
   let mixedString;
   mixedString = "Andrew1";
-expect(mixedString).toBe(".- -. -.. .-. . .-- .----")
+expect(makeMorse(mixedString)).toBe(".- -. -.. .-. . .-- .----")
 }) 
 
 it("receives string with letters numbers and symbols and a space and turns them into morsecode", ()=> {
   let mixedString;
   mixedString = "Andrew1?? ?";
-expect(mixedString).toBe(".- -. -.. .-. . .-- .---- ..--.. ..--.. / ..--..")
+expect(makeMorse(mixedString)).toBe(".- -. -.. .-. . .-- .---- ..--.. ..--.. / ..--..")
 }) 
-  
-  
-
-
 })
 
 

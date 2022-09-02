@@ -6,13 +6,33 @@
 
 .translator {
     display: grid;
+    padding: 20px;
+    height: 50;
+
+    &__heading {
+        padding: 30px;
+        text-align: center;
+    }
+
+   &__buttons {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+   }
+
+   &__convert {
+    width: 40%;
+    margin-left: 40px;
+    }
 
     &__enter {
         height: 50px;
         text-align: center;
+        margin: 20px;
     }
     &__display {
         height: 50px;
         text-align: center;
+        margin: 20px;
     }
 }

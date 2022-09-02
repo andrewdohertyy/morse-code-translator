@@ -7,45 +7,46 @@ describe('Testing translateToMorse', function () {
     // Arrange
     var letter; // Act
 
-    letter = A; // Assert
+    letter = "A";
+    var result = (0, _translator.makeMorse)(letter); // Assert
 
-    expect(letter).toBe(".-");
+    expect(result).toBe(".-");
   });
   it("receive numbers and turn them into morsecode", function () {
     // Arrange
     var number;
-    number = 1;
-    expect(number).toBe(".----");
+    number = "1";
+    expect((0, _translator.makeMorse)(number)).toBe(".----");
   });
   it("receive strings and turn them into morsecode", function () {
-    var string;
-    string = "Andrew";
-    expect(char).toBe(".- -. -.. .-. . .--");
+    var name;
+    name = "Andrew";
+    expect((0, _translator.makeMorse)(name)).toBe(".- -. -.. .-. . .--");
   });
   it("receives spaces in between words and turn them into morsecode", function () {
     var space;
     space = " ";
-    expect(letter).toBe("/");
+    expect((0, _translator.makeMorse)(space)).toBe("/");
   });
   it("receives symbols and turn them into morsecode", function () {
     var symbol;
     symbol = "+";
-    expect(symbol).toBe(".-.-.");
+    expect((0, _translator.makeMorse)(symbol)).toBe(".-.-.");
   });
   it("receives decimal numbers and turn them into morsecode", function () {
     var decimal;
     decimal = "1.5";
-    expect(decimal).toBe(".---- .-.-.- .....");
+    expect((0, _translator.makeMorse)(decimal)).toBe(".---- .-.-.- .....");
   });
   it("receivesa string with letters and numbers and turns them into morsecode", function () {
     var mixedString;
     mixedString = "Andrew1";
-    expect(mixedString).toBe(".- -. -.. .-. . .-- .----");
+    expect((0, _translator.makeMorse)(mixedString)).toBe(".- -. -.. .-. . .-- .----");
   });
   it("receives string with letters numbers and symbols and a space and turns them into morsecode", function () {
     var mixedString;
     mixedString = "Andrew1?? ?";
-    expect(mixedString).toBe(".- -. -.. .-. . .-- .---- ..--.. ..--.. / ..--..");
+    expect((0, _translator.makeMorse)(mixedString)).toBe(".- -. -.. .-. . .-- .---- ..--.. ..--.. / ..--..");
   });
 }); // What should translateToMorse function actually be able to do?
 // - Receive letters and translate those letters into morse code
