@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.translator {
+    display: grid;
+
+    &__enter {
+        height: 50px;
+        text-align: center;
+    }
+    &__display {
+        height: 50px;
+        text-align: center;
+    }
+}

@@ -1,6 +1,6 @@
 //export const translateToMorse = () => {makeMorse}
 
-    const myArray = { 
+const myList = { 
         'a':'.-',
         'b':'-...',
         'c':'-.-.',
@@ -37,17 +37,45 @@
         '9':'----.',
         '0':'-----',
         ' ':'/',
-        '?':'..--..'
+        '?':'..--..',
+        '/':'-..-.',
+        '&':'.-...'
       };
 
-      const makeMorse = (string) => {
-            return string.toLowerCase().split("").map(element => {
-            return myArray[element]; 
-        }).join("");
-    }
+const englishText = document.querySelector(".translator__enter");
+const morseDisplay = document.querySelector(".translator__display");
+const convertButton = document.querySelector(".translator__convert");
 
-      console.log(makeMorse("Andrew?"));
-      console.log("test")
-      console.log(makeMorse("Doherty"));;
-      console.log(makeMorse("united"));
+// const makeMorse = (string) => {
+//     return string.toLowerCase().split("").map(element => {
+//     return myList[element]; 
+//     }).join("");
+// }
+
+let items = [""]
+
+const makeMorse = () => {
+
+    let inputValue = englishText.value
+    console.log(inputValue);
+    inputValue = inputValue.toLowerCase();
+
+    items.push(inputValue)
+    items = inputValue.split("")
+
+
+    let itemsSplit = items.map(i => {
+        if(myList[i]) {
+            return myList[i]
+        } 
+    })
+
+    let morsecode = itemsSplit.join(" ")
+    morseDisplay.value = morsecode;
+}
+
+englishText.addEventListener("keyup", makeMorse);
+
+// convertButton.addEventListener("click",)
+
 
