@@ -13,7 +13,6 @@ describe('Testing translateToMorse', function () {
     expect(result).toBe(".-");
   });
   it("receive numbers and turn them into morsecode", function () {
-    // Arrange
     var number;
     number = "1";
     expect((0, _translator.makeMorse)(number)).toBe(".----");
@@ -48,7 +47,18 @@ describe('Testing translateToMorse', function () {
     mixedString = "Andrew1?? ?";
     expect((0, _translator.makeMorse)(mixedString)).toBe(".- -. -.. .-. . .-- .---- ..--.. ..--.. / ..--..");
   });
-}); // What should translateToMorse function actually be able to do?
+}); // beforeEach(() => {
+//   cy.visit('http://127.0.0.1:5500/index.html')
+// })
+// describe('Testing translate to morse with DOM features', () => {
+//   it('if a word is typed it should show in the display', () => {
+//   cy.get('').click()
+//   cy.get('').click()
+//   cy.get('').click()
+//   cy.get('').should("contain", "")
+//   })
+// })
+// What should translateToMorse function actually be able to do?
 // - Receive letters and translate those letters into morse code
 // - Take into consideration capital letters - These also need to translate to morse code - Research
 // - Take into consideration spaces between words and translate these accordingly.

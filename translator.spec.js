@@ -13,7 +13,6 @@ describe('Testing translateToMorse', () => {
   })
 
   it("receive numbers and turn them into morsecode", ()=> {
-    // Arrange
       let number;
       number = "1";
     expect(makeMorse(number)).toBe(".----")
@@ -55,6 +54,21 @@ it("receives string with letters numbers and symbols and a space and turns them 
 expect(makeMorse(mixedString)).toBe(".- -. -.. .-. . .-- .---- ..--.. ..--.. / ..--..")
 }) 
 })
+
+
+
+// beforeEach(() => {
+//   cy.visit('http://127.0.0.1:5500/index.html')
+// })
+
+// describe('Testing translate to morse with DOM features', () => {
+//   it('if a word is typed it should show in the display', () => {
+//   cy.get('').click()
+//   cy.get('').click()
+//   cy.get('').click()
+//   cy.get('').should("contain", "")
+//   })
+// })
 
 
 // What should translateToMorse function actually be able to do?
