@@ -15,7 +15,6 @@
     }
 
    &__buttons {
-    
     width: 60%;
     display: block;
     margin: auto;
@@ -58,6 +57,46 @@
         margin: 20px;
     }
     &__display {
+        height: 50px;
+        text-align: center;
+        margin: 20px;
+    }
+}
+
+.morsecode {
+    display: grid;
+    padding: 20px;
+    height: 80%;
+
+    &__heading {
+        padding: 30px;
+        text-align: center;
+    }
+    &__convert {
+        width: 60%;
+        display: block;
+        margin: auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        outline: 0;
+        cursor: pointer;
+        border: 2px solid #000;
+        border-radius: 3px;
+        color: #000;
+        background: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+        padding: 12px 20px;
+        text-align:center;
+    }
+    &__enter {
+        height: 50px;
+        text-align: center;
+        margin: 20px;
+    }
+    &__output {
         height: 50px;
         text-align: center;
         margin: 20px;

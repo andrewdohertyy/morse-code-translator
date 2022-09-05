@@ -2,16 +2,12 @@
 
 var _translator = require("./translator.js");
 
+//all basic tests 
 describe('Testing translateToMorse', function () {
   it("receive letters and turn them into morsecode", function () {
-    // Arrange
-    var letter; // Act
-
+    var letter;
     letter = "A";
-    var result = (0, _translator.makeMorse)(letter, _translator.engToMorse); // Assert
-
-    console.log(_translator.engToMorse);
-    expect(result).toBe(".-");
+    expect((0, _translator.makeMorse)(letter, _translator.engToMorse)).toBe(".-");
   });
   it("receive numbers and turn them into morsecode", function () {
     var number;
@@ -38,7 +34,7 @@ describe('Testing translateToMorse', function () {
     decimal = "1.5";
     expect((0, _translator.makeMorse)(decimal, _translator.engToMorse)).toBe(".---- .-.-.- .....");
   });
-  it("receivesa string with letters and numbers and turns them into morsecode", function () {
+  it("receives a string with letters and numbers and turns them into morsecode", function () {
     var mixedString;
     mixedString = "Andrew1";
     expect((0, _translator.makeMorse)(mixedString, _translator.engToMorse)).toBe(".- -. -.. .-. . .-- .----");
@@ -48,7 +44,19 @@ describe('Testing translateToMorse', function () {
     mixedString = "Andrew1?? ?";
     expect((0, _translator.makeMorse)(mixedString, _translator.engToMorse)).toBe(".- -. -.. .-. . .-- .---- ..--.. ..--.. / ..--..");
   });
-}); // beforeEach(() => {
+  it("receives multiple strings with letters numbers and symbols and a space and turns them into morsecode", function () {
+    var mixedStrings;
+    mixedStrings = "Andrew Doherty 1996 ??";
+    expect((0, _translator.makeMorse)(mixedStrings, _translator.engToMorse)).toBe(".- -. -.. .-. . .-- / -.. --- .... . .-. - -.-- / .---- ----. ----. -.... / ..--.. ..--..");
+  });
+  it("receives stringS with all capital letters and turns them into morsecode", function () {
+    var capitalString;
+    capitalString = "ANDREW DOHERTY";
+    expect((0, _translator.makeMorse)(capitalString, _translator.engToMorse)).toBe(".- -. -.. .-. . .-- / -.. --- .... . .-. - -.--");
+  });
+}); // write tests for morse-english
+//tests for DOM
+// beforeEach(() => {
 //   cy.visit('http://127.0.0.1:5500/index.html')
 // })
 // describe('Testing translate to morse with DOM features', () => {

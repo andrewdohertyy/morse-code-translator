@@ -1,16 +1,11 @@
 import { makeMorse, engToMorse } from './translator.js';
 
-
+//all basic tests 
 describe('Testing translateToMorse', () => {
   it("receive letters and turn them into morsecode", ()=> {
-    // Arrange
       let letter;
-    // Act
       letter = "A";
-      let result = makeMorse(letter,engToMorse)
-    // Assert
-    console.log(engToMorse);
-    expect(result).toBe(".-")
+    expect(makeMorse(letter,engToMorse)).toBe(".-")
   })
 
   it("receive numbers and turn them into morsecode", ()=> {
@@ -43,7 +38,7 @@ it("receives decimal numbers and turn them into morsecode", ()=> {
 expect(makeMorse(decimal,engToMorse)).toBe(".---- .-.-.- .....")
 }) 
 
-it("receivesa string with letters and numbers and turns them into morsecode", ()=> {
+it("receives a string with letters and numbers and turns them into morsecode", ()=> {
   let mixedString;
   mixedString = "Andrew1";
 expect(makeMorse(mixedString,engToMorse)).toBe(".- -. -.. .-. . .-- .----")
@@ -54,10 +49,29 @@ it("receives string with letters numbers and symbols and a space and turns them 
   mixedString = "Andrew1?? ?";
 expect(makeMorse(mixedString,engToMorse)).toBe(".- -. -.. .-. . .-- .---- ..--.. ..--.. / ..--..")
 }) 
+
+it("receives multiple strings with letters numbers and symbols and a space and turns them into morsecode", ()=> {
+  let mixedStrings;
+  mixedStrings = "Andrew Doherty 1996 ??";
+expect(makeMorse(mixedStrings,engToMorse)).toBe(".- -. -.. .-. . .-- / -.. --- .... . .-. - -.-- / .---- ----. ----. -.... / ..--.. ..--..")
+}) 
+
+it("receives stringS with all capital letters and turns them into morsecode", ()=> {
+  let capitalString;
+  capitalString = "ANDREW DOHERTY";
+expect(makeMorse(capitalString,engToMorse)).toBe(".- -. -.. .-. . .-- / -.. --- .... . .-. - -.--")
+}) 
+
 })
 
 
 
+
+
+
+// write tests for morse-english
+
+//tests for DOM
 // beforeEach(() => {
 //   cy.visit('http://127.0.0.1:5500/index.html')
 // })
