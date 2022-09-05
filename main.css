@@ -6,11 +6,10 @@
 
 .translator {
   display: grid;
-  padding: 20px;
   height: 80%;
 }
 .translator__heading {
-  padding: 30px;
+  padding: 20px;
   text-align: center;
 }
 .translator__buttons {
@@ -22,19 +21,6 @@
   align-items: center;
 }
 .translator__convert {
-  outline: 0;
-  cursor: pointer;
-  border: 2px solid #000;
-  border-radius: 3px;
-  color: #000;
-  background: #fff;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 28px;
-  padding: 12px 20px;
-  text-align: center;
-}
-.translator__clear {
   outline: 0;
   cursor: pointer;
   border: 2px solid #000;
@@ -60,8 +46,8 @@
 
 .morsecode {
   display: grid;
-  padding: 20px;
   height: 80%;
+  margin-bottom: 50px;
 }
 .morsecode__heading {
   padding: 30px;
@@ -95,4 +81,24 @@
   height: 50px;
   text-align: center;
   margin: 20px;
+}
+
+.clear {
+  width: 60%;
+  display: block;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  outline: 0;
+  cursor: pointer;
+  border: 2px solid #000;
+  border-radius: 3px;
+  color: #000;
+  background: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  padding: 12px 20px;
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */

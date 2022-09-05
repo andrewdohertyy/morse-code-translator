@@ -1,5 +1,6 @@
-export {engToMorse, makeEnglish}
+export {engToMorse, makeEnglish, morseToEng, makeMorse}
 
+//objects containing conversions
 const engToMorse = { 
         'a':'.-',
         'b':'-...',
@@ -89,15 +90,16 @@ const morseToEng = {
     '.-.-.':'+',
     '.-.-.-':'.'
 }
+
+
 //main function for converting into morsecode
-export const makeMorse = (value, charObj) => {
+const makeMorse = (value, engObj) => {
 
     let input = String(value.toLowerCase());
     let splitArr = input.split("");
-    console.log(splitArr);
     let mapArr = splitArr.map(i => {
-        if (charObj[i]) {
-            return charObj[i]
+        if (engObj[i]) {
+            return engObj[i]
         }
     })
     let morseCode = mapArr.join(" ")
@@ -105,8 +107,8 @@ export const makeMorse = (value, charObj) => {
 }
 
 
-let output = "";
 
+let output = "";
 //function to convert morse code to english
 const makeEnglish = (morse, morseObj) => {
     for (let i = 0; i < morse.split(" ").length; i++) {

@@ -3,7 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.makeMorse = exports.makeEnglish = exports.engToMorse = void 0;
+exports.makeMorse = exports.morseToEng = exports.makeEnglish = exports.engToMorse = void 0;
+//objects containing conversions
 var engToMorse = {
   'a': '.-',
   'b': '-...',
@@ -93,13 +94,14 @@ var morseToEng = {
   '.-.-.-': '.'
 }; //main function for converting into morsecode
 
-var makeMorse = function makeMorse(value, charObj) {
+exports.morseToEng = morseToEng;
+
+var makeMorse = function makeMorse(value, engObj) {
   var input = String(value.toLowerCase());
   var splitArr = input.split("");
-  console.log(splitArr);
   var mapArr = splitArr.map(function (i) {
-    if (charObj[i]) {
-      return charObj[i];
+    if (engObj[i]) {
+      return engObj[i];
     }
   });
   var morseCode = mapArr.join(" ");
