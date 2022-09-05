@@ -1,6 +1,9 @@
 "use strict";
 
-//export {makeMorse}
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.makeMorse = exports.engToMorse = void 0;
 var engToMorse = {
   'a': '.-',
   'b': '-...',
@@ -44,6 +47,7 @@ var engToMorse = {
   '+': '.-.-.',
   '.': '.-.-.-'
 };
+exports.engToMorse = engToMorse;
 var morseToEng = {
   '.-': 'a',
   '-...': 'b',
@@ -89,19 +93,20 @@ var morseToEng = {
   '.-.-.-': '.'
 };
 
-var makeMorse = function makeMorse(value) {
+var makeMorse = function makeMorse(value, charObj) {
   var input = String(value.toLowerCase());
   var splitArr = input.split("");
   console.log(splitArr);
   var mapArr = splitArr.map(function (i) {
-    if (engToMorse[i]) {
-      return engToMorse[i];
+    if (charObj[i]) {
+      return charObj[i];
     }
   });
   var morseCode = mapArr.join(" ");
   return morseCode;
 };
 
+exports.makeMorse = makeMorse;
 var output = "";
 
 var makeEnglish = function makeEnglish(morse) {
@@ -115,6 +120,3 @@ var makeEnglish = function makeEnglish(morse) {
 
   return output;
 };
-
-console.log(makeMorse("1.5"));
-console.log(makeEnglish(".---- .-.-.- ....."));

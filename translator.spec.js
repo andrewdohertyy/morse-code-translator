@@ -1,4 +1,4 @@
-import { makeMorse } from './translator';
+import { makeMorse, engToMorse } from './translator.js';
 
 
 describe('Testing translateToMorse', () => {
@@ -7,51 +7,52 @@ describe('Testing translateToMorse', () => {
       let letter;
     // Act
       letter = "A";
-      let result = makeMorse(letter)
+      let result = makeMorse(letter,engToMorse)
     // Assert
+    console.log(engToMorse);
     expect(result).toBe(".-")
   })
 
   it("receive numbers and turn them into morsecode", ()=> {
       let number;
       number = "1";
-    expect(makeMorse(number)).toBe(".----")
+    expect(makeMorse(number,engToMorse)).toBe(".----")
   })  
 
   it("receive strings and turn them into morsecode", ()=> {
       let name;
       name = "Andrew";
-    expect(makeMorse(name)).toBe(".- -. -.. .-. . .--")
+    expect(makeMorse(name,engToMorse)).toBe(".- -. -.. .-. . .--")
   }) 
 
   it("receives spaces in between words and turn them into morsecode", ()=> {
       let space;
       space = " ";
-    expect(makeMorse(space)).toBe("/")
+    expect(makeMorse(space,engToMorse)).toBe("/")
   }) 
  
   it("receives symbols and turn them into morsecode", ()=> {
     let symbol;
     symbol = "+";
-  expect(makeMorse(symbol)).toBe(".-.-.")
+  expect(makeMorse(symbol,engToMorse)).toBe(".-.-.")
 }) 
 
 it("receives decimal numbers and turn them into morsecode", ()=> {
   let decimal;
   decimal = "1.5";
-expect(makeMorse(decimal)).toBe(".---- .-.-.- .....")
+expect(makeMorse(decimal,engToMorse)).toBe(".---- .-.-.- .....")
 }) 
 
 it("receivesa string with letters and numbers and turns them into morsecode", ()=> {
   let mixedString;
   mixedString = "Andrew1";
-expect(makeMorse(mixedString)).toBe(".- -. -.. .-. . .-- .----")
+expect(makeMorse(mixedString,engToMorse)).toBe(".- -. -.. .-. . .-- .----")
 }) 
 
 it("receives string with letters numbers and symbols and a space and turns them into morsecode", ()=> {
   let mixedString;
   mixedString = "Andrew1?? ?";
-expect(makeMorse(mixedString)).toBe(".- -. -.. .-. . .-- .---- ..--.. ..--.. / ..--..")
+expect(makeMorse(mixedString,engToMorse)).toBe(".- -. -.. .-. . .-- .---- ..--.. ..--.. / ..--..")
 }) 
 })
 

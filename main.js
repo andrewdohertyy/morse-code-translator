@@ -1,3 +1,6 @@
+import {makeMorse} from './translator.js' 
+
+
 const myList = { 
     
     'a':'.-',
@@ -52,25 +55,11 @@ const clearButton = document.querySelector(".translator__clear")
 
 let items = [""]
 
-
-//function to take the input value of the form and convert it to morse in a mapped array
-const makeMorseDOM = () => {
-    let inputValue = englishText.value
-    inputValue = inputValue.toLowerCase();
-
-    items.push(inputValue)
-    items = inputValue.split("")
-    let itemsSplit = items.map(i => {
-        if(myList[i]) {
-            return myList[i]
-        } 
-    })
-    //function to only show the morse when convert is clicked
-    convertButton.addEventListener("click", displayMorse = () => {
-        let morsecode = itemsSplit.join(" ")
-        morseDisplay.value = morsecode;
-    })
-}
+//function to only show the morse when convert is clicked
+convertButton.addEventListener("click", () => {
+    const morseArr = makeMorse(englishText.value, myList)
+    morseDisplay.value = morseArr;
+})
 
 const clearText = () => {
     englishText.value = ""
@@ -79,4 +68,7 @@ const clearText = () => {
 
 
 clearButton.addEventListener("click", clearText)
-englishText.addEventListener("keyup", makeMorseDOM);
+englishText.addEventListener("keyup", () => {
+    makeMorse(englishText.value, myList)
+});
+

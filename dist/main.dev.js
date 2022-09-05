@@ -1,5 +1,7 @@
 "use strict";
 
+var _translator = require("./translator.js");
+
 var myList = {
   'a': '.-',
   'b': '-...',
@@ -48,24 +50,12 @@ var englishText = document.querySelector(".translator__enter");
 var morseDisplay = document.querySelector(".translator__display");
 var convertButton = document.querySelector(".translator__convert");
 var clearButton = document.querySelector(".translator__clear");
-var items = [""]; //function to take the input value of the form and convert it to morse in a mapped array
+var items = [""]; //function to only show the morse when convert is clicked
 
-var makeMorseDOM = function makeMorseDOM() {
-  var inputValue = englishText.value;
-  inputValue = inputValue.toLowerCase();
-  items.push(inputValue);
-  items = inputValue.split("");
-  var itemsSplit = items.map(function (i) {
-    if (myList[i]) {
-      return myList[i];
-    }
-  }); //function to only show the morse when convert is clicked
-
-  convertButton.addEventListener("click", displayMorse = function displayMorse() {
-    var morsecode = itemsSplit.join(" ");
-    morseDisplay.value = morsecode;
-  });
-};
+convertButton.addEventListener("click", function () {
+  var morseArr = (0, _translator.makeMorse)(englishText.value, myList);
+  morseDisplay.value = morseArr;
+});
 
 var clearText = function clearText() {
   englishText.value = "";
@@ -73,4 +63,6 @@ var clearText = function clearText() {
 };
 
 clearButton.addEventListener("click", clearText);
-englishText.addEventListener("keyup", makeMorseDOM);
+englishText.addEventListener("keyup", function () {
+  (0, _translator.makeMorse)(englishText.value, myList);
+});

@@ -1,6 +1,6 @@
 "use strict";
 
-var _translator = require("./translator");
+var _translator = require("./translator.js");
 
 describe('Testing translateToMorse', function () {
   it("receive letters and turn them into morsecode", function () {
@@ -8,44 +8,45 @@ describe('Testing translateToMorse', function () {
     var letter; // Act
 
     letter = "A";
-    var result = (0, _translator.makeMorse)(letter); // Assert
+    var result = (0, _translator.makeMorse)(letter, _translator.engToMorse); // Assert
 
+    console.log(_translator.engToMorse);
     expect(result).toBe(".-");
   });
   it("receive numbers and turn them into morsecode", function () {
     var number;
     number = "1";
-    expect((0, _translator.makeMorse)(number)).toBe(".----");
+    expect((0, _translator.makeMorse)(number, _translator.engToMorse)).toBe(".----");
   });
   it("receive strings and turn them into morsecode", function () {
     var name;
     name = "Andrew";
-    expect((0, _translator.makeMorse)(name)).toBe(".- -. -.. .-. . .--");
+    expect((0, _translator.makeMorse)(name, _translator.engToMorse)).toBe(".- -. -.. .-. . .--");
   });
   it("receives spaces in between words and turn them into morsecode", function () {
     var space;
     space = " ";
-    expect((0, _translator.makeMorse)(space)).toBe("/");
+    expect((0, _translator.makeMorse)(space, _translator.engToMorse)).toBe("/");
   });
   it("receives symbols and turn them into morsecode", function () {
     var symbol;
     symbol = "+";
-    expect((0, _translator.makeMorse)(symbol)).toBe(".-.-.");
+    expect((0, _translator.makeMorse)(symbol, _translator.engToMorse)).toBe(".-.-.");
   });
   it("receives decimal numbers and turn them into morsecode", function () {
     var decimal;
     decimal = "1.5";
-    expect((0, _translator.makeMorse)(decimal)).toBe(".---- .-.-.- .....");
+    expect((0, _translator.makeMorse)(decimal, _translator.engToMorse)).toBe(".---- .-.-.- .....");
   });
   it("receivesa string with letters and numbers and turns them into morsecode", function () {
     var mixedString;
     mixedString = "Andrew1";
-    expect((0, _translator.makeMorse)(mixedString)).toBe(".- -. -.. .-. . .-- .----");
+    expect((0, _translator.makeMorse)(mixedString, _translator.engToMorse)).toBe(".- -. -.. .-. . .-- .----");
   });
   it("receives string with letters numbers and symbols and a space and turns them into morsecode", function () {
     var mixedString;
     mixedString = "Andrew1?? ?";
-    expect((0, _translator.makeMorse)(mixedString)).toBe(".- -. -.. .-. . .-- .---- ..--.. ..--.. / ..--..");
+    expect((0, _translator.makeMorse)(mixedString, _translator.engToMorse)).toBe(".- -. -.. .-. . .-- .---- ..--.. ..--.. / ..--..");
   });
 }); // beforeEach(() => {
 //   cy.visit('http://127.0.0.1:5500/index.html')
